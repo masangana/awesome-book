@@ -8,21 +8,22 @@
   <link rel='stylesheet' type='text/css' media='screen' href=''>
 </head>
 <body>
-  <h1>Awesome Books</h1>
-  <br>
-  <h3>fdsafasd</h3>
-  <h3>fdsafasd</h3>
-  <button type ="button">Remove</button>
-  <hr>
-  <h3>fdsafasd</h3>
-  <h3>fdsafasd</h3>
-  <button type ="button">Remove</button>
-  <hr>
-  <br>
-  <input type="text" placeholder="Title">
-  <br>
-  <input type="text" placeholder="Author"><br>
-  <button>Add</button>
+
+  <div class="books">
+    <h1>Awesome Books</h1>
+    <br>
+    <div class="book" id="book-Info">
+
+    </div>
+  </div>
+  
+  <div class="add-form">
+    <input type="text" placeholder="Title" id="title">
+    <br>
+    <input type="text" placeholder="Author" id="author"><br>
+    <button onclick="addBook(title, author)">Add</button>
+  </div>
+  
   <script src='scripts.js'></script>
 </body>
 </html>
