@@ -20,10 +20,6 @@ function addBook(title, author) {
   
 }
 
-function removeBook (book,index) {
-  awesomeBooks.splice(index, 1);
-  console.log(awesomeBooks);
-}
 
 function showBooks(bookArray){
   BookInfo.innerHTML='';
@@ -35,8 +31,15 @@ function showBooks(bookArray){
   });
 }
 
+function removeBook (index) {
+  console.log(index)
+  awesomeBooks.splice(index, 1);
+  showBooks(awesomeBooks);
+  console.log(awesomeBooks);
+}
+
 addBookButton.addEventListener('click', () => {
-  addBook(titleInput, authorInput);
+  addBook(titleInput.value, authorInput.value);
   showBooks(awesomeBooks);
 });
 
