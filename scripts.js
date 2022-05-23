@@ -36,12 +36,22 @@ function removeBook (index) {
   awesomeBooks.splice(index, 1);
   showBooks(awesomeBooks);
   console.log(awesomeBooks);
+  //localStorage.setItem('booksData', JSON.stringify(awesomeBooks));
 }
 
 addBookButton.addEventListener('click', () => {
   addBook(titleInput.value, authorInput.value);
   showBooks(awesomeBooks);
+  localStorage.setItem('booksData', JSON.stringify(awesomeBooks));
 });
+
+if (JSON.parse(localStorage.getItem('booksData')) === null) {
+  console.log('empty data')
+} else {
+  let arrayData = JSON.parse(localStorage.getItem('booksData'));
+  showBooks(arrayData);
+  console.log(arrayData)
+}
 
 // addBook('fdsa00', 'fdsafdas');
 // addBook('book2', 'fdsafdas');
