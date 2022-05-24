@@ -6,17 +6,21 @@ const authorInput = document.getElementById('author');
 const addBookButton = document.getElementById('add-book');
 
 let BookInfo = document.getElementById('book-Info');
-const getmylibrary = JSON.parse(localStorage.getItem('saveBooks'));
+let getmylibrary = JSON.parse(localStorage.getItem('saveBooks'));
 
-console.log(getmylibrary)
+if (JSON.parse(localStorage.getItem('saveBooks')) === null) {
+    getmylibrary = [];
+}
+
 
 function addBook(title, author) {
   const newBook = new Object();
   newBook.title = title;
   newBook.author = author;
   getmylibrary.push(newBook);
-  console.log(awesomeBooks)
   showBooks(awesomeBooks);
+  titleInput.value='';
+  authorInput.value='';
 
   localStorage.setItem('saveBooks', JSON.stringify(getmylibrary));
   
@@ -28,17 +32,16 @@ function showBooks(table){
   getmylibrary.forEach((element,index) => {
     BookInfo.innerHTML += `<h4 >${element.title}</h4><br>
     <h4 >${element.author}</h4>
-    <button onclick = removeBook(${index})>DEL</button>
+    <button onclick = removeBook(${index})>Remove</button>
     <hr>`;
   });
-  //localStorage.setItem('saveBooks', JSON.stringify(getmylibrary));
 }
 
 function removeBook(index){
   
-  awesomeBooks.splice(index, 1);
-  console.log(awesomeBooks);
-  showBooks(awesomeBooks);
+  getmylibrary.splice(index, 1);
+  showBooks(getmylibrary);
+  localStorage.setItem('saveBooks', JSON.stringify(getmylibrary));
 }
 
 addBookButton.addEventListener('click', () => {
