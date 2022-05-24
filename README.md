@@ -1,15 +1,15 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Awesome Book
 
 > Description the project.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Html
+- Css
+- JavaScript
 
 ## Live Demo (if available)
 
