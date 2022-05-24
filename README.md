@@ -8,7 +8,6 @@
 
 [Live Demo Link](https://masangana.github.io/awesome-book/)
 
-
 ## Built With
 
 - Html
