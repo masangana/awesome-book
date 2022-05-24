@@ -2,8 +2,11 @@
 
 # Awesome Book
 
-> Description the project.
+> This is a simple javascript project where a user can add a book dynamically into a an array of books.
 
+## Live Demo
+
+[Live Demo Link](https://masangana.github.io/awesome-book/)
 
 ## Built With
 
