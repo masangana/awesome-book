@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-use-before-define */
-/* eslint-disable no-undef */
+
+/* eslint-disable max-classes-per-file */
 
 const titleInput = document.getElementById('title');
 const authorInput = document.getElementById('author');
@@ -32,6 +31,13 @@ function renderBook() {
   });
 }
 
+class Books {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
+
 class StorageFun {
   constructor(array) {
     this.array = array;
@@ -46,8 +52,8 @@ class StorageFun {
       this.array.push(newBook);
       this.updateStorage();
       renderBook();
-      title.value = '';
-      author.value = '';
+      titleInput.value = '';
+      authorInput.value = '';
     };
 
    deleteBook = (i) => {
