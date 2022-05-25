@@ -1,4 +1,3 @@
-
 /* eslint-disable max-classes-per-file */
 
 const titleInput = document.getElementById('title');
