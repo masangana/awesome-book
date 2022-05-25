@@ -1,29 +1,58 @@
 <!DOCTYPE html>
 <html lang="EN">
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Awesome Books</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-</head>
-<body>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Awesome Books</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+		<!-- CSS only -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<section class="books-list row">
+			<div class="title col-12 d-flex justify-content-center">
+				<h1 class="mb-3 mt-5">Awesome</h1>
+			</div>
+			<div class="col-12 d-flex justify-content-center">
+				<table
+					class="table table-striped table-hover w-75 border border-dark border-4 table-borderless"
+					id="book-Info2"
+				>
+					<tbody id="booksContainer"></tbody>
+				</table>
+			</div>
+		</section>
 
-  <div class="books">
-    <h1>Awesome Books</h1>
-    <br>
-    <div class="book" id="book-Info">
+		<hr />
 
-    </div>
-  </div>
-  
-  <div class="add-form">
-    <input type="text" placeholder="Title" id="title">
-    <br>
-    <input type="text" placeholder="Author" id="author"><br>
-    <button id="add-book">Add</button>
-  </div>
-  
-  <script src='scripts.js'></script>
-</body>
+		<section class="row" id="myForm">
+			<div
+				class="col-12 d-flex justify-content-center flex-column align-items-center"
+			>
+				<h1 class="mt-5 mb-3">Add a new Book</h1>
+				<input type="text" placeholder="Title" required="" id="title" /><br />
+				<input type="text" placeholder="Author" required="" id="author" /><br />
+				<div class="d-flex justify-content-end">
+					<button id="add-book" class="submit btn btn-success btn-lg">
+						Add
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- JavaScript Bundle with Popper -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+			crossorigin="anonymous"
+		></script>
+
+		<script src="main.js"></script>
+	</body>
 </html>
