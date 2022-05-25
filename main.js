@@ -39,7 +39,6 @@ function renderBook() {
     titreSect1.innerHTML = '';
     titreSect1.innerHTML += 'All awesome books';
   }
-
 }
 
 class Books {
@@ -73,7 +72,6 @@ class StorageFun {
      renderBook();
    };
 }
-
 
 /** navigation function */
 
