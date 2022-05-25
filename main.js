@@ -4,6 +4,9 @@ const titleInput = document.getElementById('title');
 const authorInput = document.getElementById('author');
 const addBookButton = document.getElementById('add-book');
 const BookInfo = document.getElementById('booksContainer');
+
+const titreSect1 = document.getElementById('title-sec1');
+
 let getmylibrary = JSON.parse(localStorage.getItem('mesLivres1'));
 
 if (JSON.parse(localStorage.getItem('mesLivres1')) === null) {
@@ -28,6 +31,14 @@ function renderBook() {
       </td>
     </tr>`;
   });
+
+  if (getmylibrary.length === 0) {
+    titreSect1.innerHTML = '';
+    titreSect1.innerHTML += 'there are no books yet but they will soon appear here';
+  } else {
+    titreSect1.innerHTML = '';
+    titreSect1.innerHTML += 'All awesome books';
+  }
 }
 
 class Books {
@@ -61,6 +72,63 @@ class StorageFun {
      renderBook();
    };
 }
+
+/** navigation function */
+
+const newBook = document.getElementById('newbook');
+const myForm = document.getElementById('myForm');
+const myBookList = document.getElementById('bookList');
+const myList = document.getElementById('list');
+const myHome = document.getElementById('home');
+const myContact = document.getElementById('myContact');
+const contactNavLink = document.getElementById('contactNavLink');
+
+/* Add time vue */
+const time = document.getElementById('dateTime');
+time.innerHTML = new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'long' }).format(new Date());
+/* End */
+
+newBook.addEventListener('click', (e) => {
+  e.preventDefault();
+  myForm.classList.remove('d-none');
+  newBook.classList.add('active');
+  myList.classList.remove('active');
+  myBookList.classList.add('d-none');
+  contactNavLink.classList.remove('active');
+  myContact.classList.add('d-none');
+});
+
+myList.addEventListener('click', (e) => {
+  e.preventDefault();
+  myList.classList.add('active');
+  myForm.classList.add('d-none');
+  myBookList.classList.remove('d-none');
+  newBook.classList.remove('active');
+  contactNavLink.classList.remove('active');
+  myContact.classList.add('d-none');
+});
+
+myHome.addEventListener('click', (e) => {
+  e.preventDefault();
+  myList.classList.add('active');
+  myForm.classList.add('d-none');
+  myBookList.classList.remove('d-none');
+  newBook.classList.remove('active');
+  contactNavLink.classList.remove('active');
+  myContact.classList.add('d-none');
+});
+
+contactNavLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  contactNavLink.classList.add('active');
+  myForm.classList.add('d-none');
+  myList.classList.remove('active');
+  myBookList.classList.add('d-none');
+  newBook.classList.remove('active');
+  myContact.classList.remove('d-none');
+});
+
+/* End function */
 
 const BL = new StorageFun(getmylibrary);
 addBookButton.addEventListener('click', () => {
