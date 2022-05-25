@@ -4,7 +4,9 @@ const titleInput = document.getElementById('title');
 const authorInput = document.getElementById('author');
 const addBookButton = document.getElementById('add-book');
 const BookInfo = document.getElementById('booksContainer');
+
 const titreSect1 = document.getElementById('title-sec1');
+
 let getmylibrary = JSON.parse(localStorage.getItem('mesLivres1'));
 
 if (JSON.parse(localStorage.getItem('mesLivres1')) === null) {
@@ -37,6 +39,7 @@ function renderBook() {
     titreSect1.innerHTML = '';
     titreSect1.innerHTML += 'All awesome books';
   }
+
 }
 
 class Books {
@@ -70,6 +73,7 @@ class StorageFun {
      renderBook();
    };
 }
+
 
 /** navigation function */
 
